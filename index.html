@@ -9,8 +9,9 @@
 	<script type="text/javascript">
 navigator.mediaDevices.getUserMedia({ video: true, depth: true }, success, failure);
 
-function failure(err) {console.error(err)}
+function failure(err) {console.error('failure!', err)}
 function success(s) {
+  console.log('success !',s)
   // wire the stream into a <video> element for playback
   // ISSUE: should the implementations allow the user to
   // switch between the RGB video and depth stream playback
