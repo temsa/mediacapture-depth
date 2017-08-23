@@ -27,4 +27,6 @@ function success(s) {
   depthVideo.play();
 }
 
-navigator.mediaDevices.getUserMedia({ video: true, depth: true }, success, failure);
+navigator.mediaDevices.getUserMedia({ video: true, depth: true })
+  .then(success)
+  .catch(failure)
