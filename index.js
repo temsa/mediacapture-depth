@@ -27,6 +27,9 @@ function success (s) {
   // depthVideo.play()
 }
 
-navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } }, depth: { facingMode: { exact: "environment" } } })
+navigator.mediaDevices.getUserMedia({
+  video: { facingMode: { exact: "environment" } },
+  depth: { facingMode: { exact: "environment" } }
+})
   .then(success)
   .catch(failure)
