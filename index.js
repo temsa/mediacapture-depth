@@ -10,7 +10,7 @@ function success (s) {
   // if the stream contains both video and stream tracks?
   var video = document.querySelector('#video')
   video.src = URL.createObjectURL(s)
-  video.play()
+  // video.play()
 
   // construct a new MediaStream out of the existing depth track(s)
   var depthStream = new MediaStream(s.getDepthTracks()[0])
@@ -24,9 +24,9 @@ function success (s) {
   // NOTE: how the depth information is visualized as a 8-bit grayscale representation
   var depthVideo = document.querySelector('#depthVideo')
   depthVideo.src = URL.createObjectURL(depthStream)
-  depthVideo.play()
+  // depthVideo.play()
 }
 
-navigator.mediaDevices.getUserMedia({ video: true, depth: true })
+navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } }, depth: { facingMode: { exact: "environment" } } })
   .then(success)
   .catch(failure)
